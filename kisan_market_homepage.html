@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kisan Market - Pakistan's trusted platform to buy and sell wheat, rice, corn and crops at best rates. Fair prices, fast payment, full records.">
+<meta name="keywords" content="gandum kharidna, gandum bechna, wheat buy sell Pakistan, crop trading, kisan market, fasal ka rate, agriculture Pakistan">
+<title>Kisan Market | کسان مارکیٹ - Buy & Sell Crops at Best Rates</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#C8922A;--gold-light:#F0C060;--gold-dark:#8B6010;
+  --green:#1B5E20;--green-mid:#2E7D32;--green-light:#4CAF50;
+  --cream:#FDF8EE;--cream2:#F5EDDA;--white:#FFFFFF;
+  --text-dark:#1A1200;--text-mid:#4A3800;--text-soft:#7A6030;
+  --border:#D4B870;--shadow:rgba(0,0,0,0.12);
+  --urdu:'Noto Nastaliq Urdu',serif;
+  --display:'Playfair Display',serif;
+  --body:'DM Sans',sans-serif;
+}
+body{font-family:var(--body);background:var(--cream);color:var(--text-dark);overflow-x:hidden}
+
+/* NAV */
+nav{background:var(--green);padding:12px 40px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo-icon{width:44px;height:44px;background:var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px}
+.nav-brand{color:var(--white);font-family:var(--display);font-size:22px;font-weight:700;line-height:1.1}
+.nav-brand small{display:block;font-family:var(--urdu);font-size:14px;font-weight:400;color:var(--gold-light);margin-top:1px}
+.nav-links{display:flex;gap:6px}
+.nav-links a{color:rgba(255,255,255,0.85);text-decoration:none;padding:8px 14px;border-radius:6px;font-size:14px;font-weight:500;transition:all 0.2s;cursor:pointer}
+.nav-links a:hover{background:rgba(255,255,255,0.15);color:#fff}
+.nav-cta{background:var(--gold);color:var(--text-dark)!important;font-weight:600!important;border-radius:8px!important}
+.nav-cta:hover{background:var(--gold-light)!important}
+.lang-toggle{display:flex;background:rgba(255,255,255,0.15);border-radius:20px;padding:2px;gap:2px}
+.lang-btn{padding:5px 12px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,0.7);font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s}
+.lang-btn.active{background:var(--gold);color:var(--text-dark)}
+
+/* HERO */
+.hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1B5E20 0%,#2E7D32 40%,#33691E 100%);z-index:0}
+.hero-pattern{position:absolute;inset:0;opacity:0.07;background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:20px 20px;z-index:1}
+.hero-img-overlay{position:absolute;right:0;top:0;bottom:0;width:55%;z-index:2;overflow:hidden}
+.hero-img-overlay img{width:100%;height:100%;object-fit:cover;opacity:0.35}
+.hero-gradient-overlay{position:absolute;inset:0;z-index:3;background:linear-gradient(to right,rgba(27,94,32,0.98) 35%,rgba(27,94,32,0.6) 60%,rgba(27,94,32,0.1) 100%)}
+.hero-content{position:relative;z-index:4;padding:60px 40px;max-width:620px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,146,42,0.2);border:1px solid rgba(200,146,42,0.5);color:var(--gold-light);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:24px}
+.hero-badge-urdu{font-family:var(--urdu);font-size:12px}
+h1.hero-title{font-family:var(--display);font-size:52px;font-weight:800;color:#fff;line-height:1.1;margin-bottom:12px}
+h1.hero-title span{color:var(--gold-light)}
+.hero-urdu{font-family:var(--urdu);font-size:22px;color:rgba(255,255,255,0.85);margin-bottom:18px;line-height:1.8;direction:rtl;text-align:right}
+.hero-desc{color:rgba(255,255,255,0.8);font-size:16px;line-height:1.7;margin-bottom:32px;max-width:500px}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn-sell{background:var(--gold);color:var(--text-dark);padding:16px 32px;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px}
+.btn-sell:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,146,42,0.4)}
+.btn-buy{background:transparent;color:#fff;padding:16px 32px;border:2px solid rgba(255,255,255,0.5);border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px}
+.btn-buy:hover{background:rgba(255,255,255,0.1);border-color:#fff;transform:translateY(-2px)}
+.hero-stats{display:flex;gap:32px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.15)}
+.hero-stat-num{font-size:28px;font-weight:700;color:var(--gold-light)}
+.hero-stat-label{font-size:12px;color:rgba(255,255,255,0.65);margin-top:2px}
+
+/* TICKER */
+.ticker-bar{background:var(--gold-dark);padding:10px 0;overflow:hidden;position:relative}
+.ticker-content{display:flex;gap:60px;animation:ticker 30s linear infinite;white-space:nowrap}
+.ticker-item{display:inline-flex;align-items:center;gap:10px;color:#fff;font-size:14px;font-weight:600}
+.ticker-crop{color:var(--gold-light)}
+.ticker-price{background:rgba(255,255,255,0.15);padding:3px 10px;border-radius:4px}
+.ticker-up{color:#90EE90}
+.ticker-down{color:#FFB3B3}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.section{padding:60px 40px}
+.section-header{text-align:center;margin-bottom:48px}
+.section-tag{display:inline-block;background:var(--green);color:#fff;padding:5px 16px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:12px;letter-spacing:0.5px}
+.section-tag-urdu{font-family:var(--urdu);margin-right:6px}
+h2.section-title{font-family:var(--display);font-size:36px;font-weight:700;color:var(--text-dark);margin-bottom:8px}
+.section-urdu{font-family:var(--urdu);font-size:16px;color:var(--text-soft);direction:rtl;line-height:1.8}
+.section-subtitle{font-size:15px;color:var(--text-soft);max-width:500px;margin:8px auto 0}
+
+/* ACTION CARDS */
+.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto}
+.action-card{border-radius:16px;overflow:hidden;box-shadow:0 4px 24px var(--shadow);cursor:pointer;transition:all 0.3s;position:relative}
+.action-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px var(--shadow)}
+.action-card-sell{background:linear-gradient(135deg,#1B5E20,#2E7D32)}
+.action-card-buy{background:linear-gradient(135deg,#8B6010,#C8922A)}
+.action-card-body{padding:36px;position:relative;z-index:2}
+.action-icon{width:64px;height:64px;background:rgba(255,255,255,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:20px}
+.action-title{font-family:var(--display);font-size:28px;font-weight:700;color:#fff;margin-bottom:4px}
+.action-urdu{font-family:var(--urdu);font-size:16px;color:rgba(255,255,255,0.8);direction:rtl;line-height:1.8;display:block;margin-bottom:12px}
+.action-desc{color:rgba(255,255,255,0.75);font-size:14px;line-height:1.6;margin-bottom:24px}
+.action-rate{background:rgba(255,255,255,0.15);border-radius:10px;padding:14px 18px;margin-bottom:20px}
+.action-rate-label{font-size:11px;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.action-rate-value{font-size:22px;font-weight:700;color:#fff}
+.action-rate-unit{font-size:13px;color:rgba(255,255,255,0.75)}
+.action-btn{width:100%;padding:14px;background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.4);border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.action-btn:hover{background:rgba(255,255,255,0.3)}
+.action-btn-sell{background:#fff!important;color:var(--green)!important;border-color:#fff!important}
+.action-btn-sell:hover{background:var(--cream)!important}
+.action-btn-buy{background:#fff!important;color:var(--gold-dark)!important;border-color:#fff!important}
+.action-btn-buy:hover{background:var(--cream)!important}
+
+/* RATES TABLE */
+.rates-bg{background:var(--white)}
+.rates-table-wrap{border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 2px 16px var(--shadow);max-width:1000px;margin:0 auto}
+.rates-table{width:100%;border-collapse:collapse}
+.rates-table thead{background:var(--green)}
+.rates-table thead th{color:#fff;padding:14px 20px;text-align:left;font-size:14px;font-weight:600}
+.rates-table thead th.urdu-col{font-family:var(--urdu);direction:rtl;font-size:13px}
+.rates-table tbody tr{border-bottom:1px solid rgba(212,184,112,0.2);transition:background 0.15s}
+.rates-table tbody tr:hover{background:var(--cream)}
+.rates-table tbody tr:last-child{border-bottom:none}
+.rates-table td{padding:14px 20px;font-size:14px;color:var(--text-dark)}
+.rates-table td.urdu-cell{font-family:var(--urdu);direction:rtl;font-size:13px;color:var(--text-soft)}
+.crop-icon{font-size:20px;margin-right:8px}
+.crop-name{font-weight:600}
+.badge-buy{background:#E8F5E9;color:#1B5E20;padding:4px 10px;border-radius:5px;font-size:12px;font-weight:600}
+.badge-sell{background:#FFF8E1;color:#8B6010;padding:4px 10px;border-radius:5px;font-size:12px;font-weight:600}
+.price-up{color:#1B5E20;font-weight:700}
+.price-down{color:#C62828;font-weight:700}
+
+/* RECORDS */
+.records-section{background:var(--cream2)}
+.records-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
+.record-card{background:var(--white);border-radius:14px;border:1px solid var(--border);padding:20px 22px;box-shadow:0 2px 12px var(--shadow);transition:all 0.2s}
+.record-card:hover{transform:translateY(-3px);box-shadow:0 6px 24px var(--shadow)}
+.record-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.record-badge{padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700}
+.record-badge.buy{background:#E8F5E9;color:#1B5E20}
+.record-badge.sell{background:#FFF8E1;color:#8B6010}
+.record-date{font-size:12px;color:var(--text-soft)}
+.record-name{font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:2px}
+.record-number{font-size:12px;color:var(--text-soft);margin-bottom:12px}
+.record-detail{display:flex;justify-content:space-between;align-items:center;background:var(--cream);border-radius:8px;padding:10px 14px;margin-top:8px}
+.record-crop{font-size:13px;color:var(--text-mid);font-weight:500}
+.record-price-big{font-size:18px;font-weight:800;color:var(--green)}
+.record-price-unit{font-size:11px;color:var(--text-soft);text-align:right}
+.record-confirm{display:flex;align-items:center;gap:6px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;color:var(--green-mid)}
+.confirm-dot{width:8px;height:8px;background:var(--green-light);border-radius:50%}
+
+/* TRUST */
+.trust-section{background:var(--green);padding:60px 40px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1100px;margin:0 auto}
+.trust-item{text-align:center}
+.trust-icon-wrap{width:64px;height:64px;background:rgba(255,255,255,0.12);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px}
+.trust-num{font-family:var(--display);font-size:32px;font-weight:700;color:var(--gold-light);margin-bottom:4px}
+.trust-label{font-size:14px;color:rgba(255,255,255,0.8);font-weight:500}
+.trust-urdu{font-family:var(--urdu);font-size:13px;color:rgba(255,255,255,0.6);direction:rtl;display:block;margin-top:4px}
+
+/* CONTACT */
+.contact-section{background:var(--white);padding:60px 40px}
+.contact-wrap{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-info h3{font-family:var(--display);font-size:28px;font-weight:700;color:var(--text-dark);margin-bottom:8px}
+.contact-urdu{font-family:var(--urdu);font-size:15px;color:var(--text-soft);direction:rtl;line-height:1.8;margin-bottom:20px}
+.contact-desc{color:var(--text-soft);font-size:15px;line-height:1.7;margin-bottom:24px}
+.contact-detail{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.contact-icon{width:42px;height:42px;background:var(--cream2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.contact-detail-text{font-size:14px;color:var(--text-mid);font-weight:500}
+.contact-form{background:var(--cream);border-radius:16px;padding:28px;border:1px solid var(--border)}
+.form-row{margin-bottom:16px}
+.form-label{display:block;font-size:13px;font-weight:600;color:var(--text-mid);margin-bottom:6px}
+.form-input,.form-select,.form-textarea{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:var(--body);color:var(--text-dark);background:#fff;outline:none;transition:border 0.2s}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--green)}
+.form-textarea{resize:vertical;min-height:90px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.radio-group{display:flex;gap:12px;margin-top:6px}
+.radio-opt{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;border:2px solid var(--border);border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;transition:all 0.2s}
+.radio-opt.sell-opt:hover,.radio-opt.sell-opt.selected{border-color:var(--green);background:#E8F5E9;color:var(--green)}
+.radio-opt.buy-opt:hover,.radio-opt.buy-opt.selected{border-color:var(--gold);background:#FFF8E1;color:var(--gold-dark)}
+.submit-btn{width:100%;padding:14px;background:var(--green);color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:8px;font-family:var(--body)}
+.submit-btn:hover{background:var(--green-mid);transform:translateY(-1px);box-shadow:0 4px 16px rgba(27,94,32,0.3)}
+.submit-btn span{font-family:var(--urdu);font-size:13px;display:block;font-weight:400;opacity:0.85}
+
+/* FOOTER */
+footer{background:#0D3312;color:rgba(255,255,255,0.75);padding:32px 40px;text-align:center}
+footer .footer-brand{font-family:var(--display);color:#fff;font-size:20px;margin-bottom:6px}
+footer .footer-urdu{font-family:var(--urdu);font-size:13px;color:rgba(255,255,255,0.5);direction:rtl;margin-bottom:16px;line-height:1.8}
+footer .footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:12px}
+footer .footer-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px}
+footer p{font-size:12px;color:rgba(255,255,255,0.4)}
+
+/* MODALS */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:18px;padding:36px;max-width:460px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.25)}
+.modal-icon{font-size:40px;margin-bottom:16px;text-align:center}
+.modal-title{font-family:var(--display);font-size:24px;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:6px}
+.modal-urdu{font-family:var(--urdu);font-size:14px;color:var(--text-soft);direction:rtl;text-align:center;line-height:1.8;margin-bottom:20px}
+.modal-rate-box{background:var(--cream);border-radius:10px;padding:16px;text-align:center;margin-bottom:20px;border:1px solid var(--border)}
+.modal-rate-label{font-size:12px;color:var(--text-soft);margin-bottom:4px}
+.modal-rate-value{font-size:28px;font-weight:800;color:var(--green)}
+.modal-rate-note{font-size:12px;color:var(--text-soft);margin-top:4px}
+.modal-steps{list-style:none;margin-bottom:20px}
+.modal-steps li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(212,184,112,0.2);font-size:14px;color:var(--text-mid)}
+.modal-steps li:last-child{border-bottom:none}
+.step-num{width:22px;height:22px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+.modal-close{width:100%;padding:12px;background:var(--green);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--body)}
+.modal-close-secondary{background:transparent;color:var(--text-soft);border:1px solid var(--border);margin-top:10px}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--green);color:#fff;padding:14px 22px;border-radius:12px;font-size:14px;font-weight:600;z-index:2000;transform:translateY(80px);opacity:0;transition:all 0.3s;box-shadow:0 4px 20px rgba(27,94,32,0.4)}
+.toast.show{transform:translateY(0);opacity:1}
+
+@media(max-width:768px){
+  nav{padding:12px 16px;flex-wrap:wrap;gap:10px}
+  .nav-links{display:none}
+  .hero-content{padding:40px 20px}
+  h1.hero-title{font-size:34px}
+  .hero-img-overlay{width:100%;opacity:0.15}
+  .hero-gradient-overlay{background:rgba(27,94,32,0.92)}
+  .hero-stats{flex-wrap:wrap;gap:20px}
+  .action-grid{grid-template-columns:1fr}
+  .records-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .contact-wrap{grid-template-columns:1fr}
+  .section{padding:40px 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toast">✓ آپ کی درخواست بھیج دی گئی! / Request Submitted!</div>
+
+<!-- SELL MODAL -->
+<div class="modal-overlay" id="sellModal">
+<div class="modal">
+  <div class="modal-icon">🌾</div>
+  <div class="modal-title">Sell Your Crops</div>
+  <div class="modal-urdu">اپنی فصل بیچنے کے لیے ہم سے رابطہ کریں</div>
+  <div class="modal-rate-box">
+    <div class="modal-rate-label">Today's Buying Rate — ہم خریدیں گے</div>
+    <div class="modal-rate-value">₨ 3,800 – 4,200</div>
+    <div class="modal-rate-note">per 40 kg (1 Maund) · آج کی قیمت</div>
+  </div>
+  <ul class="modal-steps">
+    <li><span class="step-num">1</span>ہم سے فون یا واٹس ایپ پر رابطہ کریں</li>
+    <li><span class="step-num">2</span>فصل کی مقدار اور معیار بتائیں</li>
+    <li><span class="step-num">3</span>قیمت طے ہو گی — گھر سے اٹھائیں گے</li>
+    <li><span class="step-num">4</span>فوری ادائیگی — بینک ٹرانسفر یا نقد</li>
+  </ul>
+  <button class="modal-close" onclick="closeModal('sellModal')">📞 ابھی رابطہ کریں / Contact Now</button>
+  <button class="modal-close modal-close-secondary" onclick="closeModal('sellModal')">بند کریں / Close</button>
+</div>
+</div>
+
+<!-- BUY MODAL -->
+<div class="modal-overlay" id="buyModal">
+<div class="modal">
+  <div class="modal-icon">🛒</div>
+  <div class="modal-title">Buy Crops & Grain</div>
+  <div class="modal-urdu">معیاری فصل خریدنے کے لیے ہم سے رابطہ کریں</div>
+  <div class="modal-rate-box">
+    <div class="modal-rate-label">Today's Selling Rate — ہم فروخت کریں گے</div>
+    <div class="modal-rate-value">₨ 4,000 – 4,500</div>
+    <div class="modal-rate-note">per 40 kg (1 Maund) · آج کی قیمت</div>
+  </div>
+  <ul class="modal-steps">
+    <li><span class="step-num">1</span>مطلوبہ فصل اور مقدار بتائیں</li>
+    <li><span class="step-num">2</span>بہترین قیمت پر سودا طے کریں</li>
+    <li><span class="step-num">3</span>تازہ اور معیاری مال ڈیلیوری</li>
+    <li><span class="step-num">4</span>مکمل ریکارڈ اور رسید دی جائے گی</li>
+  </ul>
+  <button class="modal-close" style="background:var(--gold-dark)" onclick="closeModal('buyModal')">📞 ابھی رابطہ کریں / Contact Now</button>
+  <button class="modal-close modal-close-secondary" onclick="closeModal('buyModal')">بند کریں / Close</button>
+</div>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">🌾</div>
+    <div class="nav-brand">Kisan Market<small>کسان مارکیٹ</small></div>
+  </div>
+  <div class="nav-links">
+    <a href="#hero">Home</a>
+    <a href="#rates">Rates</a>
+    <a href="#records">Records</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="nav-cta">Contact Now / ابھی رابطہ</a>
+  </div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang(this)">EN</button>
+    <button class="lang-btn" onclick="setLang(this)">اردو</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-img-overlay">
+    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=900&q=80" alt="Wheat Fields Pakistan — گندم کے کھیت">
+  </div>
+  <div class="hero-gradient-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span>🌿</span>
+      <span>Pakistan's Trusted Agri Platform</span>
+      <span class="hero-badge-urdu">· پاکستان کی قابل اعتماد منڈی</span>
+    </div>
+    <h1 class="hero-title">Buy & Sell <span>Crops</span><br>At Best Rates</h1>
+    <div class="hero-urdu">اپنی گندم اور فصل بہترین قیمت پر<br>خریدیں اور بیچیں — تیز، محفوظ، قابل اعتماد</div>
+    <p class="hero-desc">Direct crop trading — wheat, rice, corn, and more. Fair prices, fast payment, full records. Serving farmers across Pakistan.</p>
+    <div class="hero-buttons">
+      <button class="btn-sell" onclick="openModal('sellModal')">🌾 Sell Crops &nbsp;|&nbsp; فصل بیچیں</button>
+      <button class="btn-buy" onclick="openModal('buyModal')">🛒 Buy Crops &nbsp;|&nbsp; فصل خریدیں</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">2,400+</div><div class="hero-stat-label">Transactions Done</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">₨ 85 Cr+</div><div class="hero-stat-label">Total Traded Value</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">500+</div><div class="hero-stat-label">Happy Farmers</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-content">
+    <span class="ticker-item">🌾 <span class="ticker-crop">Gandum (Wheat)</span> <span class="ticker-price">₨ 4,100/40kg</span> <span class="ticker-up">▲ +80</span></span>
+    <span class="ticker-item">🌽 <span class="ticker-crop">Makai (Corn)</span> <span class="ticker-price">₨ 2,200/40kg</span> <span class="ticker-down">▼ -30</span></span>
+    <span class="ticker-item">🍚 <span class="ticker-crop">Chawal (Rice)</span> <span class="ticker-price">₨ 5,800/40kg</span> <span class="ticker-up">▲ +150</span></span>
+    <span class="ticker-item">🫘 <span class="ticker-crop">Mash Dal</span> <span class="ticker-price">₨ 7,200/40kg</span> <span class="ticker-up">▲ +200</span></span>
+    <span class="ticker-item">🌱 <span class="ticker-crop">Sarson (Mustard)</span> <span class="ticker-price">₨ 6,500/40kg</span> <span class="ticker-down">▼ -100</span></span>
+    <span class="ticker-item">🌾 <span class="ticker-crop">Gandum (Wheat)</span> <span class="ticker-price">₨ 4,100/40kg</span> <span class="ticker-up">▲ +80</span></span>
+    <span class="ticker-item">🌽 <span class="ticker-crop">Makai (Corn)</span> <span class="ticker-price">₨ 2,200/40kg</span> <span class="ticker-down">▼ -30</span></span>
+    <span class="ticker-item">🍚 <span class="ticker-crop">Chawal (Rice)</span> <span class="ticker-price">₨ 5,800/40kg</span> <span class="ticker-up">▲ +150</span></span>
+    <span class="ticker-item">🫘 <span class="ticker-crop">Mash Dal</span> <span class="ticker-price">₨ 7,200/40kg</span> <span class="ticker-up">▲ +200</span></span>
+    <span class="ticker-item">🌱 <span class="ticker-crop">Sarson (Mustard)</span> <span class="ticker-price">₨ 6,500/40kg</span> <span class="ticker-down">▼ -100</span></span>
+  </div>
+</div>
+
+<!-- BUY / SELL ACTION CARDS -->
+<section class="section" style="background:var(--cream)">
+  <div class="section-header">
+    <div class="section-tag"><span class="section-tag-urdu">کیا کرنا چاہتے ہیں؟</span> What do you want to do?</div>
+    <h2 class="section-title">Choose Your Action</h2>
+    <p class="section-subtitle">Whether you're a farmer wanting to sell your harvest or a buyer looking for quality grain — we're here.</p>
+  </div>
+  <div class="action-grid">
+    <div class="action-card action-card-sell" onclick="openModal('sellModal')">
+      <div class="action-card-body">
+        <div class="action-icon">🌾</div>
+        <div class="action-title">Sell Your Crops</div>
+        <span class="action-urdu">اپنی فصل بیچیں</span>
+        <p class="action-desc">Get the best price for your wheat, rice, corn & more. Fast pickup, immediate payment, no middlemen.</p>
+        <div class="action-rate">
+          <div class="action-rate-label">Current Buying Rate — Gandum</div>
+          <div class="action-rate-value">₨ 3,800 – 4,200 <span class="action-rate-unit">/ Maund (40kg)</span></div>
+        </div>
+        <button class="action-btn action-btn-sell">🌾 Sell Now &nbsp;·&nbsp; ابھی بیچیں →</button>
+      </div>
+    </div>
+    <div class="action-card action-card-buy" onclick="openModal('buyModal')">
+      <div class="action-card-body">
+        <div class="action-icon">🛒</div>
+        <div class="action-title">Buy Quality Grain</div>
+        <span class="action-urdu">معیاری فصل خریدیں</span>
+        <p class="action-desc">Source certified, fresh crops directly from verified farmers. Bulk orders welcome. Delivery available.</p>
+        <div class="action-rate">
+          <div class="action-rate-label">Current Selling Rate — Gandum</div>
+          <div class="action-rate-value">₨ 4,000 – 4,500 <span class="action-rate-unit">/ Maund (40kg)</span></div>
+        </div>
+        <button class="action-btn action-btn-buy">🛒 Buy Now &nbsp;·&nbsp; ابھی خریدیں →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CROP RATES TABLE -->
+<section class="section rates-bg" id="rates">
+  <div class="section-header">
+    <div class="section-tag"><span class="section-tag-urdu">آج کی قیمتیں</span> Live Market Rates</div>
+    <h2 class="section-title">Today's Crop Prices</h2>
+    <div class="section-urdu">تمام قیمتیں فی 40 کلوگرام (ایک من) کے حساب سے ہیں</div>
+    <p class="section-subtitle">Updated daily · All prices per 40kg (1 Maund)</p>
+  </div>
+  <div class="rates-table-wrap">
+    <table class="rates-table">
+      <thead>
+        <tr>
+          <th>Crop / فصل</th>
+          <th class="urdu-col">اردو نام</th>
+          <th>Buy Rate (We Pay)</th>
+          <th>Sell Rate (We Charge)</th>
+          <th>Change</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="crop-icon">🌾</span><span class="crop-name">Wheat (Gandum)</span></td>
+          <td class="urdu-cell">گندم</td>
+          <td>₨ 3,800 – 4,200</td>
+          <td>₨ 4,000 – 4,500</td>
+          <td class="price-up">▲ +80</td>
+          <td><span class="badge-buy">Available</span></td>
+        </tr>
+        <tr>
+          <td><span class="crop-icon">🍚</span><span class="crop-name">Rice (Chawal)</span></td>
+          <td class="urdu-cell">چاول</td>
+          <td>₨ 5,500 – 5,800</td>
+          <td>₨ 5,800 – 6,200</td>
+          <td class="price-up">▲ +150</td>
+          <td><span class="badge-buy">Available</span></td>
+        </tr>
+        <tr>
+          <td><span class="crop-icon">🌽</span><span class="crop-name">Corn (Makai)</span></td>
+          <td class="urdu-cell">مکئی</td>
+          <td>₨ 2,000 – 2,200</td>
+          <td>₨ 2,200 – 2,500</td>
+          <td class="price-down">▼ -30</td>
+          <td><span class="badge-sell">Limited</span></td>
+        </tr>
+        <tr>
+          <td><span class="crop-icon">🌱</span><span class="crop-name">Mustard (Sarson)</span></td>
+          <td class="urdu-cell">سرسوں</td>
+          <td>₨ 6,200 – 6,500</td>
+          <td>₨ 6,500 – 7,000</td>
+          <td class="price-down">▼ -100</td>
+          <td><span class="badge-buy">Available</span></td>
+        </tr>
+        <tr>
+          <td><span class="crop-icon">🫘</span><span class="crop-name">Mash Dal</span></td>
+          <td class="urdu-cell">ماش دال</td>
+          <td>₨ 7,000 – 7,200</td>
+          <td>₨ 7,200 – 7,800</td>
+          <td class="price-up">▲ +200</td>
+          <td><span class="badge-buy">Available</span></td>
+        </tr>
+        <tr>
+          <td><span class="crop-icon">🌿</span><span class="crop-name">Sugarcane (Ganna)</span></td>
+          <td class="urdu-cell">گنا</td>
+          <td>₨ 290 – 320</td>
+          <td>₨ 320 – 360</td>
+          <td class="price-up">▲ +10</td>
+          <td><span class="badge-sell">Seasonal</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- TRANSACTION RECORDS -->
+<section class="section records-section" id="records">
+  <div class="section-header">
+    <div class="section-tag"><span class="section-tag-urdu">مکمل ریکارڈ</span> Transaction Records</div>
+    <h2 class="section-title">Recent Transactions</h2>
+    <div class="section-urdu">تمام خریداری اور فروخت کا مکمل اور تصدیق شدہ ریکارڈ</div>
+    <p class="section-subtitle">All verified deals — name, contact, rate, quantity, and date</p>
+  </div>
+  <div class="records-grid" id="recordsGrid"></div>
+</section>
+
+<!-- TRUST SECTION -->
+<section class="trust-section">
+  <div class="section-header" style="margin-bottom:40px">
+    <h2 class="section-title" style="color:#fff">Why Farmers Trust Us</h2>
+    <div class="section-urdu" style="color:rgba(255,255,255,0.7)">ہزاروں کسان ہم پر بھروسہ کیوں کرتے ہیں</div>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="trust-icon-wrap">⚡</div>
+      <div class="trust-num">24 Hrs</div>
+      <div class="trust-label">Fast Payment</div>
+      <span class="trust-urdu">فوری ادائیگی</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-wrap">📋</div>
+      <div class="trust-num">100%</div>
+      <div class="trust-label">Transparent Records</div>
+      <span class="trust-urdu">مکمل شفافیت</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-wrap">🤝</div>
+      <div class="trust-num">500+</div>
+      <div class="trust-label">Satisfied Clients</div>
+      <span class="trust-urdu">مطمئن گاہک</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-wrap">📍</div>
+      <div class="trust-num">8 Years</div>
+      <div class="trust-label">In Business</div>
+      <span class="trust-urdu">کاروبار کا تجربہ</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section" id="contact">
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <h3>Get In Touch / رابطہ کریں</h3>
+      <div class="contact-urdu">آج ہی رابطہ کریں — تیز جواب<br>اور بہترین قیمت کی ضمانت</div>
+      <p class="contact-desc">Reach out for buying, selling, or any inquiry. We respond within 30 minutes during business hours.</p>
+      <div class="contact-detail">
+        <div class="contact-icon">📞</div>
+        <div class="contact-detail-text">0300-1234567 (WhatsApp Available)</div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📍</div>
+        <div class="contact-detail-text">Grain Market, Lahore, Pakistan</div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-detail-text">Mon–Sat: 7:00 AM – 7:00 PM</div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-detail-text">kisanmarket@gmail.com</div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-row">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <label class="form-label">I want to:</label>
+          <span style="font-family:var(--urdu);font-size:12px;color:var(--text-soft)">میں چاہتا ہوں</span>
+        </div>
+        <div class="radio-group">
+          <div class="radio-opt sell-opt" id="optSell" onclick="selectOpt('sell')">🌾 Sell / بیچنا</div>
+          <div class="radio-opt buy-opt" id="optBuy" onclick="selectOpt('buy')">🛒 Buy / خریدنا</div>
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label class="form-label">Full Name <span style="font-family:var(--urdu);font-size:11px;color:var(--text-soft)">پورا نام</span></label>
+          <input class="form-input" id="fName" placeholder="Muhammad Ali">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Phone No. <span style="font-family:var(--urdu);font-size:11px;color:var(--text-soft)">فون نمبر</span></label>
+          <input class="form-input" id="fPhone" placeholder="0300-0000000">
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label class="form-label">Crop Type <span style="font-family:var(--urdu);font-size:11px;color:var(--text-soft)">فصل</span></label>
+          <select class="form-select" id="fCrop">
+            <option value="">Select / چنیں</option>
+            <option>Gandum (Wheat)</option>
+            <option>Chawal (Rice)</option>
+            <option>Makai (Corn)</option>
+            <option>Sarson (Mustard)</option>
+            <option>Mash Dal</option>
+            <option>Ganna (Sugarcane)</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Quantity (Maund) <span style="font-family:var(--urdu);font-size:11px;color:var(--text-soft)">مقدار</span></label>
+          <input class="form-input" id="fQty" placeholder="e.g. 50">
+        </div>
+      </div>
+      <div class="form-row">
+        <label class="form-label">Message (Optional) <span style="font-family:var(--urdu);font-size:11px;color:var(--text-soft)">پیغام</span></label>
+        <textarea class="form-textarea" id="fMsg" placeholder="کوئی خاص بات / Any specific requirement..."></textarea>
+      </div>
+      <button class="submit-btn" onclick="submitForm()">
+        Send Inquiry / درخواست بھیجیں
+        <span>ہم 30 منٹ میں جواب دیں گے</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">🌾 Kisan Market · کسان مارکیٹ</div>
+  <div class="footer-urdu">پاکستان کی قابل اعتماد زرعی تجارتی منڈی</div>
+  <div class="footer-links">
+    <a href="#hero">Home</a>
+    <a href="#rates">Rates</a>
+    <a href="#records">Records</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p>© 2024 Kisan Market. All rights reserved. | SEO Optimized · Mobile Friendly · Pakistan Agri Trading Platform</p>
+</footer>
+
+<script>
+// Transaction Records Data
+const records = [
+  {type:'sell',name:'Muhammad Aslam',number:'0311-4567890',crop:'Gandum',cropUrdu:'گندم',qty:120,rate:4100,date:'28 May 2024',location:'Gujranwala'},
+  {type:'buy', name:'Rehman Trading Co.',number:'0301-2345678',crop:'Chawal',cropUrdu:'چاول',qty:200,rate:5800,date:'27 May 2024',location:'Lahore'},
+  {type:'sell',name:'Haji Bashir Ahmad', number:'0321-9876543',crop:'Makai', cropUrdu:'مکئی', qty:80, rate:2200,date:'26 May 2024',location:'Faisalabad'},
+  {type:'buy', name:'Ali Enterprises',   number:'0333-1122334',crop:'Sarson',cropUrdu:'سرسوں',qty:60, rate:6500,date:'25 May 2024',location:'Multan'},
+  {type:'sell',name:'Ghulam Mustafa',    number:'0315-6677889',crop:'Gandum',cropUrdu:'گندم',qty:150,rate:3950,date:'24 May 2024',location:'Sargodha'},
+  {type:'buy', name:'National Flour Mills',number:'0300-5544332',crop:'Gandum',cropUrdu:'گندم',qty:500,rate:4200,date:'23 May 2024',location:'Rawalpindi'},
+];
+
+const grid = document.getElementById('recordsGrid');
+records.forEach(r => {
+  const total = (r.qty * r.rate).toLocaleString('en-PK');
+  const div = document.createElement('div');
+  div.className = 'record-card';
+  div.innerHTML = `
+    <div class="record-top">
+      <span class="record-badge ${r.type}">${r.type==='buy'?'🛒 Bought':'🌾 Sold'}</span>
+      <span class="record-date">📅 ${r.date}</span>
+    </div>
+    <div class="record-name">${r.name}</div>
+    <div class="record-number">📞 ${r.number} &nbsp;·&nbsp; 📍 ${r.location}</div>
+    <div style="font-family:var(--urdu);font-size:12px;color:var(--text-soft);direction:rtl;margin-bottom:10px;line-height:1.6">${r.cropUrdu} · ${r.qty} من</div>
+    <div class="record-detail">
+      <div>
+        <div class="record-crop">🌾 ${r.crop} · ${r.qty} Maund</div>
+        <div style="font-size:12px;color:var(--text-soft)">Rate: ₨ ${r.rate.toLocaleString()}/40kg</div>
+      </div>
+      <div>
+        <div class="record-price-big">₨ ${total}</div>
+        <div class="record-price-unit">Total Value</div>
+      </div>
+    </div>
+    <div class="record-confirm">
+      <div class="confirm-dot"></div>
+      ✓ Confirmed &amp; Paid · تصدیق شدہ اور ادائیگی مکمل
+    </div>`;
+  grid.appendChild(div);
+});
+
+// Modal Controls
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', function(e) { if (e.target === this) this.classList.remove('open'); });
+});
+
+// Buy / Sell Option Selector
+function selectOpt(v) {
+  document.getElementById('optSell').classList.toggle('selected', v === 'sell');
+  document.getElementById('optBuy').classList.toggle('selected', v === 'buy');
+}
+
+// Contact Form Submit
+function submitForm() {
+  const n = document.getElementById('fName').value.trim();
+  const p = document.getElementById('fPhone').value.trim();
+  if (!n || !p) {
+    alert('براہ کرم نام اور فون نمبر ضرور بھریں\nPlease fill in your name and phone number.');
+    return;
+  }
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+  document.getElementById('fName').value = '';
+  document.getElementById('fPhone').value = '';
+  document.getElementById('fCrop').value = '';
+  document.getElementById('fQty').value = '';
+  document.getElementById('fMsg').value = '';
+  document.getElementById('optSell').classList.remove('selected');
+  document.getElementById('optBuy').classList.remove('selected');
+}
+
+// Language Toggle
+function setLang(btn) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
